@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power calculation</title>
+<style>
+    body{
+        align-items:center;
+        margin-left:20%;
+        margin-top:5%;
+        margin-right:20%;
+        border:20px groove blueviolet;
+        margin-bottom:15%;
+        font-family:Lucida Calligraphy;
+        background:linear-gradient(to bottom right,rgba(255,0,255,0),rgba(255,0,255,2));
+        
+    }  
+    form{
+        padding-left: 30px;
+    }  
+    h1{
+        text-align:center;
+        color:red;
+        font-family:Algerian;
+        font-size:50px;
+        font-weight:200px;
+    }   
+    input,label,div,button,body{
+        font-size:30px;
+    }  
+    button{
+        margin-left:auto;
+        margin-right:auto;
+        align:center;
+    }  
+    div{
+        margin-bottom:20px;
+    }                                
+</style>
+</head>
+<body>
+    <h1>Power Calculation</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div >
+        <label for ='current'>Current: &emsp;&emsp;&emsp;&emsp;&emsp;</label>
+        <input type="number" id="current" name="current" value="{{i}}"/>(in A)<br>
+        </div>
+        <div>
+        <label for ='resistance'>Resistance:&emsp;&emsp;&emsp;&emsp;</label>
+        <input type="number" id="resistance" name="resistance" value="{{r}}"/>(in ohm)<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        </div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button type="submit" value="Calculate" style="font-family:Lucida Calligraphy">Calculate Power</button>
+    <div style="margin-top: 20px;">
+            Power produced:&emsp;<input type="text" value="{{power}}">(in W)<br>
+    </div>
+    </form>
+</body>
+</html>
